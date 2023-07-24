@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Environnement 3D interactif</title>
+  <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+  <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+</head>
+<body>
+  <a-scene>
+    <a-assets>
+      <a-asset-item id="modele" src="assets/modele.glb"></a-asset-item>
+      <img id="texture" src="assets/image.jpg">
+    </a-assets>
+
+    <a-entity id="modele3D" gltf-model="#modele" position="0 1.5 -3" scale="0.1 0.1 0.1" rotation="0 180 0" shadow="cast: true"></a-entity>
+
+    <a-camera position="0 1.6 0" look-controls wasd-controls></a-camera>
+
+    <!-- Sol -->
+    <a-plane color="#800080" rotation="-90 0 0" width="100" height="100"></a-plane>
+
+    <!-- Éclairage -->
+    <a-light type="ambient" color="#888"></a-light>
+    <a-light type="directional" color="#FFF" intensity="0.6" position="2 4 -3"></a-light>
+
+  </a-scene>
+</body>
+</html>
